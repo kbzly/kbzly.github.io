@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>YAVST - Hexo</title>
+  
+    <link rel="shortcut icon" href="/source/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="YAVST - Hexo" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2025/01/08/YAVST/index.html" />
+  
+  <meta property="og:image" content="/favicon.png" />
+  
+  <meta property="og:article:published_time" content="2025-01-08T05:00:00.000Z" />
+  
+  <meta property="og:article:author" content="Yuxuan Wu" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Yuxuan Wu</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/categories/Projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/kbzly" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="/null" target="_blank" aria-label="CodePen">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="/null" target="_blank" aria-label="Patreon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-mastodon nav-item-icon" href="/null" target="_blank" aria-label="Mastodon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-discord nav-item-icon" href="/null" target="_blank" aria-label="Discord">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/Projects/">Projects</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>January</span>
+            <span>8,</span>
+            <span>2025</span>
+        </div>
+        
+
+        <h1 class="title">YAVST</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="YAVST-Yet-Another-Video-Summarization-Tool"><a href="#YAVST-Yet-Another-Video-Summarization-Tool" class="headerlink" title="YAVST: Yet Another Video Summarization Tool"></a>YAVST: Yet Another Video Summarization Tool</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p><strong>YAVST</strong> is a tool designed to automatically summarize long videos into short, engaging clips, suitable for platforms like TikTok. The tool leverages advanced machine learning techniques to identify the most meaningful video segments, ensuring the summarized videos maintain the essence of the original content.</p>
+<p>By combining <strong>2D CNNs</strong> for video frame feature extraction and a <strong>transformer architecture</strong> for understanding temporal information, YAVST achieves state-of-the-art performance on the SumMe dataset, with an <strong>F1 score of 0.783</strong>.</p>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>Video summarization requires understanding the identities and importance of objects within frame, as well as the dynamics of these objects across a sequence of frames. Pre-trained 2D convolutional neural network, such as ResNet, was employed to extract the features in a video frame. Extracted features was passed to a transformer network to gain temporal information. To mitigate disjoint frame summarization video was generated, kernel temporal segmentation (KTS) was employed like regularization to leverage high frame score and successive meaningful segments.</p>
+<p><img src="/images/YAVST_workflow.png" alt="YAVST Workflow"></p>
+<h2 id="Dataset-Description"><a href="#Dataset-Description" class="headerlink" title="Dataset Description"></a>Dataset Description</h2><p>TVSum and SumMe were chosen as dataset. TVSum contains 50 videos spanning 10 categories with lengths ranging from 2 to 10 minutes.  TVSum provides a segment-level annotation on the importance of each segment, on a scale of 1 (least important) to 5 (most important), with 20 sets of annotations for each video by different annotators. We converted the segment-level score to a frame level score by assigning the segment score to its constituent frames. SumMe also provides segment-level annotations indicating the importance of each segment within the video which designed for video summarization research.</p>
+<p><img src="/images/YAVST_dataset.png" alt="YAVST dataset"></p>
+<h2 id="Model-Architecture"><a href="#Model-Architecture" class="headerlink" title="Model Architecture"></a>Model Architecture</h2><p>Initially, video frames are processed through a ResNet model, a SOTA 2D CNN that can identify features within each frame efficiently. These identified features are then passed through XClip, which utilizes a SOTA cross-frame attention mechanism to analyze temporal relations and gather temporal information about events occurring across the frames, to generate a new set of features that captures the type of actions taking place in each frame. Finally, the features are weighted by a linear layer and passed to a sigmoid function to calculate the importance score for each frame.</p>
+<p><img src="/images/YAVST_Architecture.png" alt="YAVST Architecture"></p>
+<h2 id="Video-Summary-Generation-KTS"><a href="#Video-Summary-Generation-KTS" class="headerlink" title="Video Summary Generation: KTS"></a>Video Summary Generation: KTS</h2><p>Kernel temporal segmentation (KTS) technique was employed to ensure the continuity of the generated video. KTS method computes a set of ”change points” that segments the input features based on the pair-wise feature similarity, so that groups of similar features, corresponding to visually contiguous segments in our case, are generated.  </p>
+<p><img src="/images/YAVST_KTS.png" alt="YAVST KTS"></p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>The Kernel Temporal Segmentation was using to get the breaking point of the video and decision of the down-sampled frame. According to the frame rate of the video, the down-sampled frame was broadcast to all frame of the original video to make the new summarized video. The decision of the original frame of the video could be used to calculate the F1 score to evaluate the model performance both in precision and recall. Kernel Temporal Segmentation takes a long time to compute, but fortunately the F1 score is high, representing the content emphasized by the generated video and its similarity to the ratings given by human users in the ground true validation set.   </p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>F1 Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vsLSTM</td>
+<td>0.376</td>
+</tr>
+<tr>
+<td>dppLSTM</td>
+<td>0.386</td>
+</tr>
+<tr>
+<td>HSA-RNN</td>
+<td>0.441</td>
+</tr>
+<tr>
+<td>SUM-GDA</td>
+<td>0.528</td>
+</tr>
+<tr>
+<td>SMN</td>
+<td>0.583</td>
+</tr>
+<tr>
+<td>ResNet+KTS</td>
+<td>0.783</td>
+</tr>
+<tr>
+<td>Modified X-Clip+ResNet</td>
+<td>0.609</td>
+</tr>
+</tbody></table>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p> YAVST capitalizes on the powerful image feature extraction capabilities of ResNet 101and the sophisticated temporal comprehension of the XClip transformer. Our investigation into the performance of this combination shows its potential as a robust tool for video analysis task. Despite having a slightly lower overall F1 score compared to the original simpler XClip + ResNet 101 model. The modified one’s exhibited its ability to generate discriminative importance scores between frames. To address the limitation of frame-level importance scoring, we investigated on KTS technique to seek for a better performance on video summarization. We implemented a Resnet model embedding with KTS technique. This combination allowed our model to achieve a noteworthily high F1 score of 0.783 benchmark dataset. However, since KST requires the calculation of visual similarity, the calculation method has not been optimized, resulting in a large amount of computation and time required to generate frames for the final solution of the optimization problem.</p>
+
+    </div>
+
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Yuxuan Wu, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/Deep-Learning/" class="tag">#Deep Learning</a><a href="/tags/CNN/" class="tag">#CNN</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        
+        <a href="/2025/01/08/Mbot/" class="next">
+            <div>
+                <div class="text">
+                    <p class="label">Next</p>
+                    <h3 class="title">MBot Autonomous Ground Robot</h3>
+                </div>
+            </div>
+        </a>
+        
+        <a class="prev"></a>
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/resume" class="item">Resume</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Projects</h2>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/kbzly" class="item">GitHub</a>
+                
+                <a href="" class="item">CodePen</a>
+                
+                <a href="" class="item">Patreon</a>
+                
+                <a href="" class="item">Mastodon</a>
+                
+                <a href="" class="item">Discord</a>
+                
+                <a href="mailto:yuxuanwu@umich.edu" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2025 Yuxuan Wu<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>

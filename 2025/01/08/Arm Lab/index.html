@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Arm Lab - Hexo</title>
+  
+    <link rel="shortcut icon" href="/source/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="Arm Lab - Hexo" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2025/01/08/Arm%20Lab/index.html" />
+  
+  <meta property="og:image" content="/favicon.png" />
+  
+  <meta property="og:article:published_time" content="2025-01-08T05:00:00.000Z" />
+  
+  <meta property="og:article:author" content="Yuxuan Wu" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Yuxuan Wu</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/categories/Projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/kbzly" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="/null" target="_blank" aria-label="CodePen">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="/null" target="_blank" aria-label="Patreon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-mastodon nav-item-icon" href="/null" target="_blank" aria-label="Mastodon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-discord nav-item-icon" href="/null" target="_blank" aria-label="Discord">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/Projects/">Projects</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>January</span>
+            <span>8,</span>
+            <span>2025</span>
+        </div>
+        
+
+        <h1 class="title">Arm Lab</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="Robotic-Vision-and-Manipulation-System-for-Autonomous-Object-Handling"><a href="#Robotic-Vision-and-Manipulation-System-for-Autonomous-Object-Handling" class="headerlink" title="Robotic Vision and Manipulation System for Autonomous Object Handling"></a>Robotic Vision and Manipulation System for Autonomous Object Handling</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Given the challenge of utilizing an RX200 Arm to manipulate various types of blocks around the workspace, we applied our understanding of frame transformations, forward&#x2F;inverse kinematics, OpenCV, and programming to effectively complete these tasks. This approach allowed us to manipulate the arm, utilize camera information, detect blocks, and apply control schemes.</p>
+<p>We document our process, methodology, and results to demonstrate our ability to apply the aforementioned concepts learned in class. Our methodology involves:</p>
+<ol>
+<li><strong>Camera Calibration</strong>: Calibrating the camera and implementing intrinsic, extrinsic, and homography matrices to convert between pixel, camera, and world coordinates.</li>
+<li><strong>Kinematics</strong>: Using a DH table for forward kinematics to find the pose of the end-effector and inverse kinematics to calculate motor angles for specified poses.</li>
+<li><strong>Block Detection</strong>: Implementing a block detector using OpenCV to create and fine-tune a blob detector for determining each block’s shape and color.</li>
+<li><strong>Task Integration</strong>: Combining these components into a control scheme to accomplish tasks during a competition.</li>
+</ol>
+<p>We successfully completed most tasks in the competition, though some tasks were not scored.</p>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li><strong>Precise Manipulation</strong>: Forward and inverse kinematics for accurate arm control.</li>
+<li><strong>Real-Time Vision</strong>: OpenCV-based block detection, including blob detection for shapes and colors.</li>
+<li><strong>Coordinate Transformation</strong>: Conversion between pixel, camera, and world coordinates using homography and transformation matrices.</li>
+<li><strong>Task Automation</strong>: Integration of control schemes for competition tasks.</li>
+</ul>
+<h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><ol>
+<li><p><strong>Camera Calibration</strong>:</p>
+<ul>
+<li>Implement intrinsic, extrinsic, and homography matrices.</li>
+<li>Map coordinates between pixel, camera, and world frames.</li>
+</ul>
+</li>
+<li><p><strong>Kinematics</strong>:</p>
+<ul>
+<li>Derive forward kinematics using the DH table to compute the pose of the end-effector.</li>
+<li>Implement inverse kinematics to calculate motor angles for reaching specific end-effector poses.</li>
+</ul>
+</li>
+<li><p><strong>Block Detection</strong>:</p>
+<ul>
+<li>Develop a blob detector using OpenCV.</li>
+<li>Fine-tune detection algorithms to identify block shapes and colors accurately.</li>
+</ul>
+</li>
+<li><p><strong>Control Scheme</strong>:</p>
+<ul>
+<li>Combine calibrated camera data, kinematics, and block detection into an integrated system.</li>
+<li>Automate tasks for competition scenarios.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><ul>
+<li>Successfully completed most tasks in the competition.</li>
+<li>Demonstrated integration of kinematics, vision, and control for robotic manipulation.</li>
+</ul>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>Find the project repository here: <a target="_blank" rel="noopener" href="https://github.com/kbzly/Lab-Course-Part-1.git">GitHub</a></p>
+<h2 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h2><p>This project was completed as part of the ARM Lab course at the University of Michigan. Special thanks to our instructors and team members for their guidance and collaboration.</p>
+
+    </div>
+
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Yuxuan Wu, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/Camera/" class="tag">#Camera</a><a href="/tags/Computer-Vision/" class="tag">#Computer Vision</a><a href="/tags/Robot-Kinematics/" class="tag">#Robot Kinematics</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        
+        <a href="/2025/01/08/ANA/" class="next">
+            <div>
+                <div class="text">
+                    <p class="label">Next</p>
+                    <h3 class="title">ANA</h3>
+                </div>
+            </div>
+        </a>
+        
+        
+        <a href="/2025/01/08/Mbot/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">MBot Autonomous Ground Robot</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/resume" class="item">Resume</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Projects</h2>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/kbzly" class="item">GitHub</a>
+                
+                <a href="" class="item">CodePen</a>
+                
+                <a href="" class="item">Patreon</a>
+                
+                <a href="" class="item">Mastodon</a>
+                
+                <a href="" class="item">Discord</a>
+                
+                <a href="mailto:yuxuanwu@umich.edu" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2025 Yuxuan Wu<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>

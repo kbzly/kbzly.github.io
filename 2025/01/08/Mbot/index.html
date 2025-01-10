@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>MBot Autonomous Ground Robot - Hexo</title>
+  
+    <link rel="shortcut icon" href="/source/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="MBot Autonomous Ground Robot - Hexo" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2025/01/08/Mbot/index.html" />
+  
+  <meta property="og:image" content="/favicon.png" />
+  
+  <meta property="og:article:published_time" content="2025-01-08T05:00:00.000Z" />
+  
+  <meta property="og:article:author" content="Yuxuan Wu" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Yuxuan Wu</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/categories/Projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/kbzly" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="/null" target="_blank" aria-label="CodePen">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="/null" target="_blank" aria-label="Patreon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-mastodon nav-item-icon" href="/null" target="_blank" aria-label="Mastodon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-discord nav-item-icon" href="/null" target="_blank" aria-label="Discord">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/Projects/">Projects</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>January</span>
+            <span>8,</span>
+            <span>2025</span>
+        </div>
+        
+
+        <h1 class="title">MBot Autonomous Ground Robot</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="MBot-Autonomous-Ground-Robot"><a href="#MBot-Autonomous-Ground-Robot" class="headerlink" title="MBot Autonomous Ground Robot"></a>MBot Autonomous Ground Robot</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Our project demonstrates key capabilities required by modern autonomous systems using the <strong>MBot</strong>, a three-level differential drive robot equipped with:</p>
+<ul>
+<li>DC motors and encoders for precise motion control.</li>
+<li>A forward-facing camera for block detection using April Tags.</li>
+<li>A LIDAR scanner for navigation and mapping.</li>
+<li>A fabricated forklift mechanism for object interaction.</li>
+</ul>
+<p>The system integrates motion control, SLAM, path planning, and object manipulation, enabling the MBot to complete tasks like efficient exploration and object handling.</p>
+<hr>
+<h2 id="Motion-Controller-Odometry"><a href="#Motion-Controller-Odometry" class="headerlink" title="Motion Controller &amp; Odometry"></a>Motion Controller &amp; Odometry</h2><h3 id="Calibration"><a href="#Calibration" class="headerlink" title="Calibration"></a>Calibration</h3><p>MBot uses the Classic Calibrate script to calibrate the Mbot automatically and ensure that the polarity of the robot’s encoders match the software implementation. The calibration data is stored in the onboard Pico’s memory.  </p>
+<h3 id="Odometry"><a href="#Odometry" class="headerlink" title="Odometry"></a>Odometry</h3><p>When comparing our actual Mbot rotation angle ω to a predetermined desired angle, we found a large error. To compensate, an updated method to set our angular velocity was implemented, which directly uses the gyro data to calculate rotation angle. We used Mbot dynamic model to calculate left and right wheel speed to update our odometry.   </p>
+<h3 id="PID-Controller-and-Filters"><a href="#PID-Controller-and-Filters" class="headerlink" title="PID Controller and Filters"></a>PID Controller and Filters</h3><p>It is possible to drive the Mbot without a PID motor speed controller. However, applying an unfiltered pwm signal results in very jerky movements and the Mbot falls over more often than not. Implementing a proportional, integral, derivative controller allows for smooth and accurate speed adjustments. Our PID controller uses our calibration values as well as the wheel encoders to provide feedback on the wheel’s speed. The motor speed controller is implemented in the MBot loop function when the drive mode is “MODE MBOT VEL.” The measured speed of the motors, read using the motor’s encoders, is passed through a low pass filter to reduce the noise from discretization. The difference between the desired and measured velocity is used as an input parameter for the rc filter march which outputs the right and left motor command. The velocity command is then converted to a pwm signal.</p>
+<h3 id="Control-Algorithm"><a href="#Control-Algorithm" class="headerlink" title="Control Algorithm"></a>Control Algorithm</h3><ul>
+<li><strong>Straight Maneuver Controller:</strong> Adjusts velocity to maintain heading toward the goal.</li>
+<li><strong>Turn Maneuver Controller:</strong> Controls angular velocity for precise rotations.</li>
+<li><strong>Smart Maneuver Controller:</strong> Combines straight movement and angular adjustments.</li>
+</ul>
+<hr>
+<h2 id="Simultaneous-Localization-and-Mapping-SLAM"><a href="#Simultaneous-Localization-and-Mapping-SLAM" class="headerlink" title="Simultaneous Localization and Mapping (SLAM)"></a>Simultaneous Localization and Mapping (SLAM)</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>SLAM combines data from LIDAR, odometry, and a particle filter to map and localize MBot. This is essential in environments without GPS or pre-existing maps.</p>
+<h3 id="Mapping"><a href="#Mapping" class="headerlink" title="Mapping"></a>Mapping</h3><p>A 2D occupancy grid updates based on LIDAR scans:</p>
+<ul>
+<li>Endpoints of rays represent obstacles.</li>
+<li>Points between the start and endpoint are marked as free using Bresenham’s Algorithm.</li>
+</ul>
+<h3 id="Action-Model"><a href="#Action-Model" class="headerlink" title="Action Model"></a>Action Model</h3><p>The MBot predicts its next pose by modeling its movements as a combination of:</p>
+<ol>
+<li>Rotation.</li>
+<li>Translation.</li>
+<li>Another rotation.</li>
+</ol>
+<p>Gaussian noise is added to account for uncertainties, balancing accuracy and efficiency.</p>
+<h3 id="Sensor-Model-and-Particle-Filter"><a href="#Sensor-Model-and-Particle-Filter" class="headerlink" title="Sensor Model and Particle Filter"></a>Sensor Model and Particle Filter</h3><p>The particle filter evaluates potential poses based on LIDAR data. The most likely pose is determined by weighted particles, ensuring accurate localization.</p>
+<hr>
+<h2 id="Path-Planning"><a href="#Path-Planning" class="headerlink" title="Path Planning"></a>Path Planning</h2><h3 id="A-Path-Planning"><a href="#A-Path-Planning" class="headerlink" title="A* Path Planning"></a>A* Path Planning</h3><p>The A* algorithm finds the shortest path between two points using:</p>
+<ul>
+<li><strong>g-cost:</strong> Distance from the start to the current node.</li>
+<li><strong>h-cost:</strong> Estimated distance to the goal.</li>
+<li><strong>f-cost:</strong> Sum of g-cost and h-cost.</li>
+</ul>
+<p>Nodes are evaluated in 8 directions (up, down, left, right, and diagonals) for optimal path selection.</p>
+<h3 id="Map-Exploration"><a href="#Map-Exploration" class="headerlink" title="Map Exploration"></a>Map Exploration</h3><p>The MBot explores using frontiers, which are free, unexplored areas identified by LIDAR. It:</p>
+<ol>
+<li>Plans a path to the nearest frontier.</li>
+<li>Explores until no reachable frontiers remain.</li>
+<li>Returns to the starting position.</li>
+</ol>
+<hr>
+<h2 id="Forklift-Operations"><a href="#Forklift-Operations" class="headerlink" title="Forklift Operations"></a>Forklift Operations</h2><h3 id="Design-and-Fabrication"><a href="#Design-and-Fabrication" class="headerlink" title="Design and Fabrication"></a>Design and Fabrication</h3><p>The forklift uses a <strong>Scotch yoke mechanism</strong> for vertical movement, meeting three constraints:</p>
+<ol>
+<li>Aligns with pallets for pickup and clears a height &gt;120 mm for drop-off.</li>
+<li>Minimizes obstruction of the camera and LIDAR.</li>
+<li>Operates efficiently with a limited motor range.</li>
+</ol>
+<h3 id="Interacting-with-Crates"><a href="#Interacting-with-Crates" class="headerlink" title="Interacting with Crates"></a>Interacting with Crates</h3><ul>
+<li><strong>Pickup Protocol:</strong> Identifies and lifts blocks using April Tags to determine ID, location, and height.</li>
+<li><strong>Drop-Off Protocol:</strong> Places blocks in specified locations, ensuring proper stacking.</li>
+</ul>
+<p>The forklift operates at four preset heights to handle crates efficiently, based on experimentally determined positions.</p>
+
+    </div>
+
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Yuxuan Wu, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/Autonomous-Robots/" class="tag">#Autonomous Robots</a><a href="/tags/Path-Planning/" class="tag">#Path Planning</a><a href="/tags/SLAM/" class="tag">#SLAM</a><a href="/tags/LIDAR/" class="tag">#LIDAR</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        
+        <a href="/2025/01/08/Arm%20Lab/" class="next">
+            <div>
+                <div class="text">
+                    <p class="label">Next</p>
+                    <h3 class="title">Arm Lab</h3>
+                </div>
+            </div>
+        </a>
+        
+        
+        <a href="/2025/01/08/YAVST/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">YAVST</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/resume" class="item">Resume</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Projects</h2>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/kbzly" class="item">GitHub</a>
+                
+                <a href="" class="item">CodePen</a>
+                
+                <a href="" class="item">Patreon</a>
+                
+                <a href="" class="item">Mastodon</a>
+                
+                <a href="" class="item">Discord</a>
+                
+                <a href="mailto:yuxuanwu@umich.edu" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2025 Yuxuan Wu<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
