@@ -50,6 +50,33 @@
     
     
     <entry>
+      <title>YAVST</title>
+      <link href="/2025/01/09/YAVST/"/>
+      <url>/2025/01/09/YAVST/</url>
+      
+        <content type="html"><![CDATA[<h1 id="YAVST-Yet-Another-Video-Summarization-Tool"><a href="#YAVST-Yet-Another-Video-Summarization-Tool" class="headerlink" title="YAVST: Yet Another Video Summarization Tool"></a>YAVST: Yet Another Video Summarization Tool</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p><strong>YAVST</strong> is a tool designed to automatically summarize long videos into short, engaging clips, suitable for platforms like TikTok. The tool leverages advanced machine learning techniques to identify the most meaningful video segments, ensuring the summarized videos maintain the essence of the original content.</p><p>By combining <strong>2D CNNs</strong> for video frame feature extraction and a <strong>transformer architecture</strong> for understanding temporal information, YAVST achieves state-of-the-art performance on the SumMe dataset, with an <strong>F1 score of 0.783</strong>.</p><h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>Video summarization requires understanding the identities and importance of objects within frame, as well as the dynamics of these objects across a sequence of frames. Pre-trained 2D convolutional neural network, such as ResNet, was employed to extract the features in a video frame. Extracted features was passed to a transformer network to gain temporal information. To mitigate disjoint frame summarization video was generated, kernel temporal segmentation (KTS) was employed like regularization to leverage high frame score and successive meaningful segments.</p><p><img src="/images/YAVST_workflow.png" alt="YAVST Workflow"></p><h2 id="Dataset-Description"><a href="#Dataset-Description" class="headerlink" title="Dataset Description"></a>Dataset Description</h2><p>TVSum and SumMe were chosen as dataset. TVSum contains 50 videos spanning 10 categories with lengths ranging from 2 to 10 minutes.  TVSum provides a segment-level annotation on the importance of each segment, on a scale of 1 (least important) to 5 (most important), with 20 sets of annotations for each video by different annotators. We converted the segment-level score to a frame level score by assigning the segment score to its constituent frames. SumMe also provides segment-level annotations indicating the importance of each segment within the video which designed for video summarization research.</p><p><img src="/images/YAVST_dataset.png" alt="YAVST dataset"></p><h2 id="Model-Architecture"><a href="#Model-Architecture" class="headerlink" title="Model Architecture"></a>Model Architecture</h2><p>Initially, video frames are processed through a ResNet model, a SOTA 2D CNN that can identify features within each frame efficiently. These identified features are then passed through XClip, which utilizes a SOTA cross-frame attention mechanism to analyze temporal relations and gather temporal information about events occurring across the frames, to generate a new set of features that captures the type of actions taking place in each frame. Finally, the features are weighted by a linear layer and passed to a sigmoid function to calculate the importance score for each frame.</p><p><img src="/images/YAVST_Architecture.png" alt="YAVST Architecture"></p><h2 id="Video-Summary-Generation-KTS"><a href="#Video-Summary-Generation-KTS" class="headerlink" title="Video Summary Generation: KTS"></a>Video Summary Generation: KTS</h2><p>Kernel temporal segmentation (KTS) technique was employed to ensure the continuity of the generated video. KTS method computes a set of ”change points” that segments the input features based on the pair-wise feature similarity, so that groups of similar features, corresponding to visually contiguous segments in our case, are generated.  </p><p><img src="/images/YAVST_KTS.png" alt="YAVST KTS"></p><h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>The Kernel Temporal Segmentation was using to get the breaking point of the video and decision of the down-sampled frame. According to the frame rate of the video, the down-sampled frame was broadcast to all frame of the original video to make the new summarized video. The decision of the original frame of the video could be used to calculate the F1 score to evaluate the model performance both in precision and recall. Kernel Temporal Segmentation takes a long time to compute, but fortunately the F1 score is high, representing the content emphasized by the generated video and its similarity to the ratings given by human users in the ground true validation set.   </p><table><thead><tr><th>Model</th><th>F1 Score</th></tr></thead><tbody><tr><td>vsLSTM</td><td>0.376</td></tr><tr><td>dppLSTM</td><td>0.386</td></tr><tr><td>HSA-RNN</td><td>0.441</td></tr><tr><td>SUM-GDA</td><td>0.528</td></tr><tr><td>SMN</td><td>0.583</td></tr><tr><td>ResNet+KTS</td><td>0.783</td></tr><tr><td>Modified X-Clip+ResNet</td><td>0.609</td></tr></tbody></table><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p> YAVST capitalizes on the powerful image feature extraction capabilities of ResNet 101and the sophisticated temporal comprehension of the XClip transformer. Our investigation into the performance of this combination shows its potential as a robust tool for video analysis task. Despite having a slightly lower overall F1 score compared to the original simpler XClip + ResNet 101 model. The modified one’s exhibited its ability to generate discriminative importance scores between frames. To address the limitation of frame-level importance scoring, we investigated on KTS technique to seek for a better performance on video summarization. We implemented a Resnet model embedding with KTS technique. This combination allowed our model to achieve a noteworthily high F1 score of 0.783 benchmark dataset. However, since KST requires the calculation of visual similarity, the calculation method has not been optimized, resulting in a large amount of computation and time required to generate frames for the final solution of the optimization problem.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Projects </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> CNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Data Structure Project</title>
       <link href="/2025/01/09/Data%20Structure%20Project/"/>
       <url>/2025/01/09/Data%20Structure%20Project/</url>
@@ -71,33 +98,6 @@
             <tag> Algorithms </tag>
             
             <tag> c++ </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>YAVST</title>
-      <link href="/2025/01/09/YAVST/"/>
-      <url>/2025/01/09/YAVST/</url>
-      
-        <content type="html"><![CDATA[<h1 id="YAVST-Yet-Another-Video-Summarization-Tool"><a href="#YAVST-Yet-Another-Video-Summarization-Tool" class="headerlink" title="YAVST: Yet Another Video Summarization Tool"></a>YAVST: Yet Another Video Summarization Tool</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p><strong>YAVST</strong> is a tool designed to automatically summarize long videos into short, engaging clips, suitable for platforms like TikTok. The tool leverages advanced machine learning techniques to identify the most meaningful video segments, ensuring the summarized videos maintain the essence of the original content.</p><p>By combining <strong>2D CNNs</strong> for video frame feature extraction and a <strong>transformer architecture</strong> for understanding temporal information, YAVST achieves state-of-the-art performance on the SumMe dataset, with an <strong>F1 score of 0.783</strong>.</p><h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><p>Video summarization requires understanding the identities and importance of objects within frame, as well as the dynamics of these objects across a sequence of frames. Pre-trained 2D convolutional neural network, such as ResNet, was employed to extract the features in a video frame. Extracted features was passed to a transformer network to gain temporal information. To mitigate disjoint frame summarization video was generated, kernel temporal segmentation (KTS) was employed like regularization to leverage high frame score and successive meaningful segments.</p><p><img src="/images/YAVST_workflow.png" alt="YAVST Workflow"></p><h2 id="Dataset-Description"><a href="#Dataset-Description" class="headerlink" title="Dataset Description"></a>Dataset Description</h2><p>TVSum and SumMe were chosen as dataset. TVSum contains 50 videos spanning 10 categories with lengths ranging from 2 to 10 minutes.  TVSum provides a segment-level annotation on the importance of each segment, on a scale of 1 (least important) to 5 (most important), with 20 sets of annotations for each video by different annotators. We converted the segment-level score to a frame level score by assigning the segment score to its constituent frames. SumMe also provides segment-level annotations indicating the importance of each segment within the video which designed for video summarization research.</p><p><img src="/images/YAVST_dataset.png" alt="YAVST dataset"></p><h2 id="Model-Architecture"><a href="#Model-Architecture" class="headerlink" title="Model Architecture"></a>Model Architecture</h2><p>Initially, video frames are processed through a ResNet model, a SOTA 2D CNN that can identify features within each frame efficiently. These identified features are then passed through XClip, which utilizes a SOTA cross-frame attention mechanism to analyze temporal relations and gather temporal information about events occurring across the frames, to generate a new set of features that captures the type of actions taking place in each frame. Finally, the features are weighted by a linear layer and passed to a sigmoid function to calculate the importance score for each frame.</p><p><img src="/images/YAVST_Architecture.png" alt="YAVST Architecture"></p><h2 id="Video-Summary-Generation-KTS"><a href="#Video-Summary-Generation-KTS" class="headerlink" title="Video Summary Generation: KTS"></a>Video Summary Generation: KTS</h2><p>Kernel temporal segmentation (KTS) technique was employed to ensure the continuity of the generated video. KTS method computes a set of ”change points” that segments the input features based on the pair-wise feature similarity, so that groups of similar features, corresponding to visually contiguous segments in our case, are generated.  </p><p><img src="/images/YAVST_KTS.png" alt="YAVST KTS"></p><h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>The Kernel Temporal Segmentation was using to get the breaking point of the video and decision of the down-sampled frame. According to the frame rate of the video, the down-sampled frame was broadcast to all frame of the original video to make the new summarized video. The decision of the original frame of the video could be used to calculate the F1 score to evaluate the model performance both in precision and recall. Kernel Temporal Segmentation takes a long time to compute, but fortunately the F1 score is high, representing the content emphasized by the generated video and its similarity to the ratings given by human users in the ground true validation set.   </p><table><thead><tr><th>Model</th><th>F1 Score</th></tr></thead><tbody><tr><td>vsLSTM</td><td>0.376</td></tr><tr><td>dppLSTM</td><td>0.386</td></tr><tr><td>HSA-RNN</td><td>0.441</td></tr><tr><td>SUM-GDA</td><td>0.528</td></tr><tr><td>SMN</td><td>0.583</td></tr><tr><td>ResNet+KTS</td><td>0.783</td></tr><tr><td>Modified X-Clip+ResNet</td><td>0.609</td></tr></tbody></table><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p> YAVST capitalizes on the powerful image feature extraction capabilities of ResNet 101and the sophisticated temporal comprehension of the XClip transformer. Our investigation into the performance of this combination shows its potential as a robust tool for video analysis task. Despite having a slightly lower overall F1 score compared to the original simpler XClip + ResNet 101 model. The modified one’s exhibited its ability to generate discriminative importance scores between frames. To address the limitation of frame-level importance scoring, we investigated on KTS technique to seek for a better performance on video summarization. We implemented a Resnet model embedding with KTS technique. This combination allowed our model to achieve a noteworthily high F1 score of 0.783 benchmark dataset. However, since KST requires the calculation of visual similarity, the calculation method has not been optimized, resulting in a large amount of computation and time required to generate frames for the final solution of the optimization problem.</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Projects </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Deep Learning </tag>
-            
-            <tag> CNN </tag>
             
         </tags>
       
