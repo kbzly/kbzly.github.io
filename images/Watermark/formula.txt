@@ -1,0 +1,17 @@
+
+$$
+k = \frac{\log(V)}{\log(50000)} \
+$$
+
+$$
+\delta(z) 
+= k[\alpha \left(\frac{2H}{\log(V)} - 1\right) 
++ \beta]
+$$
+
+$$
+H 
+= - \sum_{i=1}^{V} p_i \,\log\bigl(p_i\bigr)
+$$
+
+

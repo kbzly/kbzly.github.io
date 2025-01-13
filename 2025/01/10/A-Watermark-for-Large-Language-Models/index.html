@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>A Watermark for Large Language Models - Hexo</title>
+  
+    <link rel="shortcut icon" href="/source/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="A Watermark for Large Language Models - Hexo" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2025/01/10/A-Watermark-for-Large-Language-Models/index.html" />
+  
+  <meta property="og:image" content="/favicon.png" />
+  
+  <meta property="og:article:published_time" content="2025-01-10T05:00:00.000Z" />
+  
+  <meta property="og:article:author" content="Yuxuan Wu" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Yuxuan Wu</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/categories/Projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/kbzly" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="/null" target="_blank" aria-label="CodePen">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="/null" target="_blank" aria-label="Patreon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-mastodon nav-item-icon" href="/null" target="_blank" aria-label="Mastodon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-discord nav-item-icon" href="/null" target="_blank" aria-label="Discord">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/Projects/">Projects</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>January</span>
+            <span>10,</span>
+            <span>2025</span>
+        </div>
+        
+
+        <h1 class="title">A Watermark for Large Language Models</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="Reproduction-and-Evaluation-of-A-Watermark-for-Large-Language-Models"><a href="#Reproduction-and-Evaluation-of-A-Watermark-for-Large-Language-Models" class="headerlink" title="Reproduction and Evaluation of A Watermark for Large Language Models"></a>Reproduction and Evaluation of A Watermark for Large Language Models</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>As the adoption of large language models (LLMs) continues to expand, concerns around the authenticity and attribution of AI-generated content have grown. One emerging solution to address these concerns is the concept of <strong>watermarking</strong>—embedding identifiable signals into the output of LLMs. The watermarking approach proposed by Kirchenbauer et al. provides a robust and practical method to embed identifiable patterns in LLM outputs. </p>
+<p>For more details, refer to the original paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2301.10226">“A Watermark for Large Language Models”</a>.</p>
+<hr>
+<h2 id="Why-Watermarking"><a href="#Why-Watermarking" class="headerlink" title="Why Watermarking?"></a>Why Watermarking?</h2><p>Watermarking serves as a mechanism to:</p>
+<ul>
+<li><strong>Identify AI-generated content</strong>: Influencing future LLM model training due to synthetic data.</li>
+<li><strong>Ensure Accountability</strong>: Generating spam and disinformation on social media.</li>
+<li><strong>Prevent Academic Cheating</strong>: Cheating on academic writing and coding exams.</li>
+</ul>
+<p>With the increasing sophistication of AI, watermarking provides a much-needed layer of security and transparency.</p>
+<hr>
+<h2 id="How-Does-Watermarking-Work"><a href="#How-Does-Watermarking-Work" class="headerlink" title="How Does Watermarking Work?"></a>How Does Watermarking Work?</h2><p>A signal is embedded in sequences generated by the watermarked language mode. There is a slight bias on the semantic space that will not be detected without the hash. The human language distribution can be assumed to be even because it did not know the information about the hash. However, the language model generated sequences with watermark bias on the distribution of that particular hash. The next token will be classified as green list and red list based on the former token without access language mode.   </p>
+<p><img src="/images/Watermark/Watermark_sample.png" alt="Watermark sample"></p>
+<hr>
+<h2 id="🤗-Hugging-Face"><a href="#🤗-Hugging-Face" class="headerlink" title="🤗 Hugging Face"></a>🤗 <a target="_blank" rel="noopener" href="https://huggingface.co/">Hugging Face</a></h2><p>The Hugging Face community is a vibrant ecosystem offering <strong>open-source machine learning models, tools, libraries, and datasets</strong> that empower developers and researchers to innovate effortlessly. With its user-friendly framework, Hugging Face enables the easy deployment, fine-tuning, and modification of state-of-the-art models, making it a go-to platform for natural language processing, computer vision, and more.</p>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><h3 id="Generation"><a href="#Generation" class="headerlink" title="Generation"></a>Generation</h3><p>The <strong>Soft Red List algorithm</strong> works by adding a constant bias &delta; to the logits of tokens in the green list. The green list is determined based on the hash key and the preceding token. To divide the entire vocabulary, a random number generator is used to shuffle the numbers <code>0</code> to <code>V-1</code>, where <code>V</code> represents the vocabulary size. The first &gamma; * V tokens are categorized into the green list, while the remaining tokens are assigned to the red list.</p>
+<p><img src="/images/Watermark/Watermark_generation.png" alt="Watermark generation"></p>
+<h3 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h3><h3 id="Distribution-of-Human-Language-Tokens"><a href="#Distribution-of-Human-Language-Tokens" class="headerlink" title="Distribution of Human Language Tokens"></a>Distribution of Human Language Tokens</h3><p>The distribution of human language tokens can be described as follows:</p>
+<h4 id="Mean-µ"><a href="#Mean-µ" class="headerlink" title="Mean (µ)"></a>Mean (µ)</h4><p>The mean is defined as the ratio of the number of tokens in the green list to the total number of tokens in the sequence. This represents the expected proportion of tokens that fall within the green list.</p>
+<h4 id="Variance-σ²"><a href="#Variance-σ²" class="headerlink" title="Variance (σ²)"></a>Variance (σ²)</h4><p>The variance is derived from the binomial distribution and can be computed as:</p>
+<p><img src="/images%5CWatermark%5Cformula1.png" alt="formula1"></p>
+<p>where:</p>
+<ul>
+<li>T: Total number of tokens in the sequence,</li>
+<li>p: The probability of a token being in the green list. For the generator, p corresponds to &gamma;, the expected fraction of green tokens.</li>
+</ul>
+<p>This formulation applies to both human-generated sequences and sequences generated by the model.</p>
+<h4 id="Z-Test"><a href="#Z-Test" class="headerlink" title="Z-Test"></a>Z-Test</h4><p>A Z-test can then be employed to quantify the difference between the given sequence and natural human language. </p>
+<ul>
+<li><strong>Threshold</strong>: (z &#x3D; 4)<ul>
+<li>This threshold implies that if a given sequence is classified as generated by a language model, the probability of it being human-generated is approximately (0.00006).</li>
+</ul>
+</li>
+</ul>
+<h3 id="Algorithm-Extension"><a href="#Algorithm-Extension" class="headerlink" title="Algorithm Extension"></a>Algorithm Extension</h3><p>We find that the soft watermark with constant δ still has two main drawbacks. Different models can have different vocabulary sizes. For instance, the Chinese model Qwen2.5 has a vocabulary size around 150000 while and opt model has a vocabulary size around the typical value 50000. This increased size will dilute the impact of δ. Second, the δ is fixed for low-entropy text and high-entropy text. However, we want to have smaller δ for low-entropy token and relatively larger δ for high-entropy token to achieve lower perplexity while maintaining the watermark. We introduce the adaptive δ which takes the logits as input.  </p>
+<p><img src="/images%5CWatermark%5Cformula2.png" alt="formula2"></p>
+<p>The fraction k is used to normalized the effect on different vocabulary sizes. The entropy H is used to adjust δ for different input entropy. We also have a scaling factor α and a bias factor β. In theory, this should achieve a better consistence over different models, provide a lower perplexity and keep the watermark detectable with high accuracy.</p>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><h3 id="English-Experiment"><a href="#English-Experiment" class="headerlink" title="English Experiment"></a>English Experiment</h3><p>In replicating their results and conducting a basic analysis,  <strong>c4&#x2F;realnewslike</strong> was used as the English dataset and <strong>facebook&#x2F;opt-1.3b</strong> as the watermark model. The plots above display ROC curves along with Area Under the Curve(AUC) and perplexity (ppl) values. For a fixed γ, increasing δ yields higher AUC but worse ppl. There is no clear trend when varying γ. Overall, <strong>multinomial sampling</strong> achieves higher AUC at the expense of greater perplexity.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="/images/Watermark/result_en_1.png" alt="result_en_1"></td>
+<td><img src="/images/Watermark/result_en_2.png" alt="result_en_2"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="/images/Watermark/result_en_3.png" alt="result_en_3"></td>
+<td><img src="/images/Watermark/result_en_4.png" alt="result_en_4"></td>
+</tr>
+</tbody></table>
+<h3 id="Multilingual-Experiment"><a href="#Multilingual-Experiment" class="headerlink" title="Multilingual Experiment"></a>Multilingual Experiment</h3><p>Watermarking algorithm is also be extend to multilingual settings to see if it would still work well. Spanish, Chinese and Github Code dataset were tested and the Chinese dataset had a noticeably lower z-score for lower δ values. The reason was believed that this is due to the Chinese language having a significantly larger number of characters and vocab size than English. This leads to a dilution of the effect of δ as the distribution difference between the green list and red list will be decreased. </p>
+<p><img src="/images/Watermark/spanish_dataset.png" alt="spanish_dataset"></p>
+<p><img src="/images/Watermark/code_dataset.png" alt="code_dataset"></p>
+<p><img src="/images/Watermark/chinese_dataset.png" alt="hinese_dataset"></p>
+<p>The results report in the paper were also replicated, showing that γ &#x3D; 0.1 consistently lies on the Pareto front for balancing detection robustness and embedding overhead, regardless of δ. As expected, reducing γ increases the z-score because it limits the available tokens in the green list. Conversely, increasing δ also raises the z-score by inflating the logits of green list tokens, making their generation more readily detectable.</p>
+<p><img src="/images/Watermark/result_gamma.png" alt="result_gamma"></p>
+<p><img src="/images/Watermark/result_delta.png" alt="result_delta"></p>
+<h3 id="Adaptive-δ-Experiment"><a href="#Adaptive-δ-Experiment" class="headerlink" title="Adaptive δ Experiment"></a>Adaptive δ Experiment</h3><p>An experiment was conducted using α &#x3D; 4.0 and β &#x3D; 4.0 to approximate the performance of a fixed δ &#x3D; 2.0, while all other parameters were kept unchanged. Under the fixed δ, a ppl of 7.5791 and an AUC of 0.9970 were observed. In contrast, with the adaptive δ, a ppl of 7.4479 and an AUC of 0.9990 were recorded. Unlike previous findings, in which perplexity and AUC were shown to trade off, improvements in both were observed with the adaptive δ, although the extent of improvement was minimal. If the dataset contains numerous low-entropy sequences, the improvement may become more significant.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a><strong>Conclusion</strong></h2><p> The watermarking algorithm from Kirchenbauer et al. was replicated and extended, embedding human-invisible but machine-detectable patterns in LLM-generated text. Robust performance was observed across English, Spanish, Chinese, and programming code, preserving detection accuracy with minimal quality loss. We confirmed that γ &#x3D; 0.1 remains on the Pareto front, balancing detection robustness and overhead. An adaptive δ mechanism was introduced to improve both perplexity and detection by adjusting bias based on token entropy and vocabulary size. These findings showcase watermarking’s flexibility across various contexts, laying a foundation for future refinements in detecting and mitigating improper use of LLM-generated content.</p>
+
+    </div>
+
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Yuxuan Wu, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/Large-Language-Models/" class="tag">#Large Language Models</a><a href="/tags/AI-Security/" class="tag">#AI Security</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        
+        <a href="/2025/01/11/resume/" class="next">
+            <div>
+                <div class="text">
+                    <p class="label">Next</p>
+                    <h3 class="title">resume</h3>
+                </div>
+            </div>
+        </a>
+        
+        
+        <a href="/2025/01/09/Data%20Structure%20Project/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">Data Structure Project</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/categories/resume" class="item">Resume</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Projects</h2>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/kbzly" class="item">GitHub</a>
+                
+                <a href="" class="item">CodePen</a>
+                
+                <a href="" class="item">Patreon</a>
+                
+                <a href="" class="item">Mastodon</a>
+                
+                <a href="" class="item">Discord</a>
+                
+                <a href="mailto:yuxuanwu@umich.edu" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2025 Yuxuan Wu<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
